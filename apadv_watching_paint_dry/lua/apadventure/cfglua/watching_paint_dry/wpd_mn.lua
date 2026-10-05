@@ -1,11 +1,10 @@
 include('shared.lua')
 
-local FRIDGE_DOOR_LEFT_INDEX = 1335
-local FRIDGE_DOOR_RIGHT_INDEX = 1336
-local PICTURE_FRAME_INDEX = 1388
-local RED_BUTTON_INDEX = 1375
-
-local earthDestroyed = false
+local FRIDGE_DOOR_LEFT_ID = 1335
+local FRIDGE_DOOR_RIGHT_ID = 1336
+local PICTURE_FRAME_ID = 1388
+local RED_BUTTON_ID = 1375
+local earthDestroyed
 
 return {
   PostCfgLoad = function(self)
@@ -21,11 +20,11 @@ return {
       APADV.SendMapLocation('Read Newspaper')
       hook.Remove('AcceptInput', 'WPD_ReadNewspaper')
     end)
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     WPDCloseAndLockDoor(ents.FindByName('LaunchDoor')[1])
     hook.Add('AcceptInput', 'WPD_RedButton', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= RED_BUTTON_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= RED_BUTTON_ID then return end
       --[[
       Garry's Mod seems unable to stop music from playing; this isn't too much of an issue
       ents.FindByName('music')[1]:Fire('StopSound')
@@ -41,13 +40,14 @@ return {
     hook.Add('AcceptInput', 'WPD_BlockRedButtonOutputs', function(ent, input, activ, callr)
       if
           IsValid(callr) and
-          callr:MapCreationID() == RED_BUTTON_INDEX and
-          (ent:GetName() == 'LaunchDoor' or earthDestroyed) then
+          callr:MapCreationID() == RED_BUTTON_ID and
+          (ent:GetName() == 'LaunchDoor' or earthDestroyed)
+      then
         return true
       end
     end)
     hook.Add('AcceptInput', 'WPD_DetachPicture', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= PICTURE_FRAME_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= PICTURE_FRAME_ID then return end
       APADV.SendMapLocation('Detach Picture')
       hook.Remove('AcceptInput', 'WPD_DetachPicture')
     end)
@@ -64,7 +64,6 @@ return {
     hook.Remove('AcceptInput', 'WPD_ReadNewspaper')
     hook.Remove('AcceptInput', 'WPD_RedButton')
     hook.Remove('AcceptInput', 'WPD_DestroyEarth')
-    earthDestroyed = false
     hook.Remove('AcceptInput', 'WPD_BlockRedButtonOutputs')
     hook.Remove('AcceptInput', 'WPD_DetachPicture')
     hook.Remove('AcceptInput', 'WPD_ControlRoomButton')
@@ -72,35 +71,35 @@ return {
 
   OnFullConnect = function(self)
     WPDKillFoundGravityGun()
-    if APADV.MapLocationStatus('Destroy Earth') == true then
+    if APADV.MapLocationStatus('Destroy Earth') then
       earthDestroyed = true
       ents.FindByName('EarthSafe')[1]:Fire('Open') --Destroyed Earth
-      ents.GetMapCreatedEntity(RED_BUTTON_INDEX):Fire('PressIn')
+      ents.GetMapCreatedEntity(RED_BUTTON_ID):Fire('PressIn')
     end
-    if APADV.MapLocationStatus('Detach Picture') == true then
-      ents.GetMapCreatedEntity(PICTURE_FRAME_INDEX):Fire('Kill')
+    if APADV.MapLocationStatus('Detach Picture') then
+      ents.GetMapCreatedEntity(PICTURE_FRAME_ID):Fire('Kill')
     end
-    if APADV.MapLocationStatus('Control Room Button') == true then
+    if APADV.MapLocationStatus('Control Room Button') then
       ents.FindByName('bonzibutton')[1]:Fire('PressIn')
     end
   end,
 
   MapItemFuncs = {
     ['First Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('firstdoor')[1])
     end,
     ['Fridge Doors'] = function(iList)
-      if #iList == 0 then return end
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+      if iList[1] == nil then return end
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     end,
     ['Launch Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('LaunchDoor')[1])
     end,
     ['Control Room Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('controlroomdoor')[1])
     end
   }

@@ -66,7 +66,7 @@ WPDOpenLockedDoor = function(ent)
 end
 
 ---Enables a prop by showing it visually, enabling its motion and allowing it to be picked up.
----@param ent Entity The prop to disable.
+---@param ent Entity The prop to enable.
 ---@param enableMotion boolean | nil Whether the prop's motion should be enabled. Defaults to true. Set to false for the Clock props, as they are wall-mounted.
 WPDEnablePhysicsProp = function(ent, enableMotion)
 	ent:RemoveEffects(EF_NODRAW)

@@ -6,8 +6,8 @@ This repository contains all of Jack5's custom configuration files for the [Garr
 
 ## Configs
 
-- [Watching Paint Dry: The apAdventure](apadv_watching_paint_dry/README.md)
-- CromulentVille 2 apAdventure - *In development...*
+- **[Watching Paint Dry: The apAdventure](apadv_watching_paint_dry/README.md)**
+- **[CromulentVille 2 apAdventure](apadv_cromulentville_2/README.md)** (incomplete)
 
 ## Installation
 
@@ -17,6 +17,6 @@ This repository contains all of Jack5's custom configuration files for the [Garr
 4. Each config has its own requirements. Refer to their READMEs for more information.
 
 > [!NOTE]
-> At time of writing, apAdventure may throw an `Options.OptionError: Slot <you> tried add config group <config_name> to their pool, which could not be found.*`.
+> At time of writing, apAdventure may throw an `Options.OptionError: Slot <player_name> tried add config group <config_name> to their pool, which could not be found.`
 >
 > To fix this, copy the folder in each `apadv_*/data_static/apadventure/logic/cfg/` to your Archipelago folder's `gmod_apadv/logic/cfg/`. You will need to do this each time you update a config. Alternatively, use a symbolic link (if you're on Linux and know how to make those).

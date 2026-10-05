@@ -1,4 +1,4 @@
-local nuclearFalloutEnjoyed = false
+local nuclearFalloutEnjoyed
 
 return {
   PostCfgLoad = function(self)
@@ -19,11 +19,10 @@ return {
 
   CfgUnload = function(self)
     hook.Remove('PlayerInitialSpawn', 'WPD_FirstSpawn')
-    nuclearFalloutEnjoyed = false
   end,
 
   OnFullConnect = function(self)
-    if APADV.MapLocationStatus('Enjoy Nuclear Fallout') == true then
+    if APADV.MapLocationStatus('Enjoy Nuclear Fallout') then
       nuclearFalloutEnjoyed = true
     end
   end

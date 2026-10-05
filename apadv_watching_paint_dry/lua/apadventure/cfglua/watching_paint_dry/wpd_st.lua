@@ -1,14 +1,14 @@
 include('shared.lua')
 
-local FRIDGE_DOOR_LEFT_INDEX = 1451
-local FRIDGE_DOOR_RIGHT_INDEX = 1452
-local FRIDGE_POWER_SWITCH_INDEX = 1502
-local WINDOW_DOOR_INDEX = 1329
-local HIDEOUT_POWER_SWITCH_INDEX = 1505
-local HIDEOUT_GRATE_INDEX = 1340
-local PICTURE_FRAME_INDEX = 1378
-local CONTROL_ROOL_POWER_SWITCH_INDEX = 1508
-local FRIDGE_BONZI_INDEX = 1411
+local FRIDGE_DOOR_LEFT_ID = 1451
+local FRIDGE_DOOR_RIGHT_ID = 1452
+local FRIDGE_POWER_SWITCH_ID = 1502
+local WINDOW_DOOR_ID = 1329
+local HIDEOUT_POWER_SWITCH_ID = 1505
+local HIDEOUT_GRATE_ID = 1340
+local PICTURE_FRAME_ID = 1378
+local CONTROL_ROOL_POWER_SWITCH_ID = 1508
+local FRIDGE_BONZI_ID = 1411
 
 return {
   PostCfgLoad = function(self)
@@ -59,23 +59,23 @@ return {
     end)
     WPDDisablePhysicsProp(ents.FindByName('Clock')[1])
     WPDDisablePhysicsProp(ents.FindByName('ClockBack')[1])
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     hook.Add('AcceptInput', 'WPD_FridgePowerSwitch', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= FRIDGE_POWER_SWITCH_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= FRIDGE_POWER_SWITCH_ID then return end
       APADV.SendMapLocation('Fridge Power Switch')
       hook.Remove('AcceptInput', 'WPD_FridgePowerSwitch')
     end)
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(WINDOW_DOOR_INDEX))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(WINDOW_DOOR_ID))
     hook.Add('EntityTakeDamage', 'WPD_BreakGrate', function(target, dmginfo)
-      if target:MapCreationID() ~= HIDEOUT_GRATE_INDEX then return end
+      if target:MapCreationID() ~= HIDEOUT_GRATE_ID then return end
       APADV.SendMapLocation('Break Grate')
       hook.Remove('EntityTakeDamage', 'WPD_BreakGrate')
     end)
     WPDDisablePhysicsProp(ents.FindByName('Computer')[1])
     WPDDisablePhysicsProp(ents.FindByName('key02')[1])
     hook.Add('AcceptInput', 'WPD_LowerHideoutPowerSwitch', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= HIDEOUT_POWER_SWITCH_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= HIDEOUT_POWER_SWITCH_ID then return end
       APADV.SendMapLocation('Hideout Power Switch')
       hook.Remove('AcceptInput', 'WPD_LowerHideoutPowerSwitch')
     end)
@@ -113,8 +113,8 @@ return {
           IsValid(callr) and (
             callr:GetName() == 'PostPortalRelay' or
             callr:GetName() == 'bonzibutton'
-          ) and
-          string.find(ent:GetName(), 'door') then
+          ) and string.find(ent:GetName(), 'door')
+      then
         return true
       end
     end)
@@ -126,7 +126,7 @@ return {
       hook.Remove('AcceptInput', 'WPD_FlushToilet')
     end)
     hook.Add('AcceptInput', 'WPD_DetachPicture', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= PICTURE_FRAME_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= PICTURE_FRAME_ID then return end
       APADV.SendMapLocation('Detach Picture')
       hook.Remove('AcceptInput', 'WPD_DetachPicture')
     end)
@@ -137,7 +137,7 @@ return {
     end)
     WPDCloseAndLockDoor(ents.FindByName('controlroomdoor')[1])
     hook.Add('AcceptInput', 'WPD_ControlRoomPowerSwitch', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= CONTROL_ROOL_POWER_SWITCH_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= CONTROL_ROOL_POWER_SWITCH_ID then return end
       APADV.SendMapLocation('Control Room Power Switch')
       hook.Remove('AcceptInput', 'WPD_ControlRoomPowerSwitch')
     end)
@@ -157,7 +157,7 @@ return {
       end
       hook.Remove('AcceptInput', 'WPD_BonziAppears')
     end)
-    ents.GetMapCreatedEntity(FRIDGE_BONZI_INDEX):Fire('Kill')
+    ents.GetMapCreatedEntity(FRIDGE_BONZI_ID):Fire('Kill')
     hook.Add('AcceptInput', 'WPD_WorldEradicated', function(ent, input, activ, callr)
       if not IsValid(callr) or callr:GetName() ~= 'bonzibutton' or ent:GetName() ~= 'closegame' then return end
       APADV.SendMapLocation('World Eradicated')
@@ -205,88 +205,88 @@ return {
   end,
 
   OnFullConnect = function(self)
-    if APADV.MapLocationStatus('Key') == true then
+    if APADV.MapLocationStatus('Key') then
       ents.GetMapCreatedEntity(1377):GetPhysicsObject():EnableMotion(true) --First room grate
       ents.FindByName('key01')[1]:Fire('Kill')
     end
     WPDKillFoundGravityGun()
-    if APADV.MapLocationStatus('Fridge Power Switch') == true then
-      ents.GetMapCreatedEntity(FRIDGE_POWER_SWITCH_INDEX):Fire('Open')
+    if APADV.MapLocationStatus('Fridge Power Switch') then
+      ents.GetMapCreatedEntity(FRIDGE_POWER_SWITCH_ID):Fire('Open')
     end
-    if APADV.MapLocationStatus('Hideout Power Switch') == true then
-      ents.GetMapCreatedEntity(HIDEOUT_POWER_SWITCH_INDEX):Fire('Open')
+    if APADV.MapLocationStatus('Hideout Power Switch') then
+      ents.GetMapCreatedEntity(HIDEOUT_POWER_SWITCH_ID):Fire('Open')
     end
-    if APADV.MapLocationStatus('Break Grate') == true then
-      ents.GetMapCreatedEntity(HIDEOUT_GRATE_INDEX):TakeDamage(100)
+    if APADV.MapLocationStatus('Break Grate') then
+      ents.GetMapCreatedEntity(HIDEOUT_GRATE_ID):TakeDamage(100)
     end
-    if APADV.MapLocationStatus('Attach Clock') == true then
+    if APADV.MapLocationStatus('Attach Clock') then
       ents.FindByName('ClockLogicRelay')[1]:Fire('Trigger')
     end
-    if APADV.MapLocationStatus('Attach Monitor') == true then
+    if APADV.MapLocationStatus('Attach Monitor') then
       ents.FindByName('ComputerLogicRelay')[1]:Fire('Trigger')
     end
-    if APADV.MapLocationStatus('Attach Dish') == true then
+    if APADV.MapLocationStatus('Attach Dish') then
       ents.FindByName('DishLogicRelay')[1]:Fire('Trigger')
     end
-    if APADV.MapLocationStatus('Detach Picture') == true then
-      ents.GetMapCreatedEntity(PICTURE_FRAME_INDEX):Fire('Kill')
+    if APADV.MapLocationStatus('Detach Picture') then
+      ents.GetMapCreatedEntity(PICTURE_FRAME_ID):Fire('Kill')
     end
-    if APADV.MapLocationStatus('Control Room Power Switch') == true then
-      ents.GetMapCreatedEntity(CONTROL_ROOL_POWER_SWITCH_INDEX):Fire('Open')
+    if APADV.MapLocationStatus('Control Room Power Switch') then
+      ents.GetMapCreatedEntity(CONTROL_ROOL_POWER_SWITCH_ID):Fire('Open')
     end
     --Do not 'PressIn' `bonzibutton`, starts Bonzi sequence
   end,
 
   MapItemFuncs = {
     ['First Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('firstdoor')[1])
     end,
     ['Clock'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDEnablePhysicsProp(ents.FindByName('Clock')[1], false)
       WPDEnablePhysicsProp(ents.FindByName('ClockBack')[1], false)
     end,
     ['Fridge Doors'] = function(iList)
-      if #iList == 0 then return end
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+      if iList[1] == nil then return end
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     end,
     ['Window Door'] = function(iList)
-      if #iList == 0 then return end
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(WINDOW_DOOR_INDEX))
+      if iList[1] == nil then return end
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(WINDOW_DOOR_ID))
     end,
     ['Monitor'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDEnablePhysicsProp(ents.FindByName('Computer')[1], nil)
     end,
     ['Keycard'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDEnablePhysicsProp(ents.FindByName('key02')[1], nil)
     end,
     ['Dish'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDEnablePhysicsProp(ents.FindByName('Dish')[1], nil)
     end,
     ['Closet Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('closetdoor')[1])
     end,
     ['Time Travel Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('TimeTravelDoor')[1])
     end,
     ['Progressive Power'] = function(iList)
-      if #iList < 3 then return end
+      if iList[3] == nil then return end
       ents.FindByName('TimeMachineButton')[1]:Fire('Unlock')
       hook.Remove('AcceptInput', 'WPD_NotEnoughProgressivePower')
     end,
     ['Bathroom Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('bathroomdoor')[1])
     end,
     ['Control Room Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('controlroomdoor')[1])
     end
   }

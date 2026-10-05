@@ -1,8 +1,8 @@
 include('shared.lua')
 
-local FRIDGE_DOOR_LEFT_INDEX = 1276
-local FRIDGE_DOOR_RIGHT_INDEX = 1277
-local PICTURE_FRAME_INDEX = 1306
+local FRIDGE_DOOR_LEFT_ID = 1276
+local FRIDGE_DOOR_RIGHT_ID = 1277
+local PICTURE_FRAME_ID = 1306
 
 return {
   PostCfgLoad = function(self)
@@ -10,10 +10,10 @@ return {
     --Tried increasing the radius of and moving the soundscape but to no avail; its better to remove anyway because the sound is annoying
     ents.FindByClass('env_soundscape')[1]:Fire('Kill')
     WPDAddGravityGunHooks(self)
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     hook.Add('AcceptInput', 'WPD_DetachPicture', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= PICTURE_FRAME_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= PICTURE_FRAME_ID then return end
       APADV.SendMapLocation('Detach Picture')
       hook.Remove('AcceptInput', 'WPD_DetachPicture')
     end)
@@ -33,22 +33,22 @@ return {
 
   OnFullConnect = function(self)
     WPDKillFoundGravityGun()
-    if APADV.MapLocationStatus('Detach Picture') == true then
-      ents.GetMapCreatedEntity(PICTURE_FRAME_INDEX):Fire('Kill')
+    if APADV.MapLocationStatus('Detach Picture') then
+      ents.GetMapCreatedEntity(PICTURE_FRAME_ID):Fire('Kill')
     end
-    if APADV.MapLocationStatus('Control Room Button') == true then
+    if APADV.MapLocationStatus('Control Room Button') then
       ents.FindByName('bonzibutton')[1]:Fire('PressIn')
     end
   end,
 
   MapItemFuncs = {
     ['Fridge Doors'] = function(iList)
-      if #iList == 0 then return end
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+      if iList[1] == nil then return end
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     end,
     ['Control Room Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('controlroomdoor')[1])
     end
   }

@@ -1,0 +1,1 @@
+{"reg":{"Box Stairs":{"cond":[]},"L Stairs":{"cond":[]},"Chute":{"cond":[]},"Rotated Room":{"cond":[]}},"connect":{"Box Stairs":{"Chute":{"twoway":false}},"Start":{"L Stairs":{"twoway":false}},"Chute":{"Rotated Room":{"twoway":false}},"L Stairs":{"Box Stairs":{"twoway":false}}}}

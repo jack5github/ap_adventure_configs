@@ -1,17 +1,10 @@
 include('shared.lua')
 
-local FRIDGE_DOOR_LEFT_INDEX = 1255
-local FRIDGE_DOOR_RIGHT_INDEX = 1256
-local CONTROL_ROOM_BUTTON_INDEX = 1277
-
-local hurtables = {
-  { ['index'] = 1240, ['hurt'] = false }, --Paint can 1
-  { ['index'] = 1239, ['hurt'] = false }, --Paint can 2
-  { ['index'] = 1242, ['hurt'] = false }, --Paint can 3
-  { ['index'] = 1326, ['hurt'] = false }, --Breen bust
-  { ['index'] = 1325, ['hurt'] = false }, --Coffee maker
-  { ['index'] = 1329, ['hurt'] = false }, --Kitchen table
-}
+local FRIDGE_DOOR_LEFT_ID = 1255
+local FRIDGE_DOOR_RIGHT_ID = 1256
+local CONTROL_ROOM_BUTTON_ID = 1277
+--Paint can 1, 2, 3, Breen bust, coffee maker, kitchen table
+local hurtables = { 1240, 1239, 1242, 1326, 1325, 1329 }
 
 return {
   PostCfgLoad = function(self)
@@ -34,27 +27,22 @@ return {
       hook.Remove('PlayerInitialSpawn', 'WPD_FirstSpawn')
     end)
     hook.Add('EntityTakeDamage', 'WPD_DestructionOfCompanyProperty', function(target, dmginfo)
-      local hurt = false
-      for _, hurtable in ipairs(hurtables) do
-        if target:MapCreationID() == hurtable.index then
-          hurtable.hurt = true
-          hurt = true
+      for i, hurtable in ipairs(hurtables) do
+        if target:MapCreationID() == hurtable then
+          table.remove(hurtables, i)
           break
         end
       end
-      if not hurt then return end
-      for _, hurtable in ipairs(hurtables) do
-        if not hurtable.hurt then return end
-      end
+      if hurtables[1] ~= nil then return end
       APADV.SendMapLocation('Destruction of Company Property')
       hook.Remove('EntityTakeDamage', 'WPD_DestructionOfCompanyProperty')
     end)
     WPDCloseAndLockDoor(ents.FindByName('firstdoor')[1])
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+    WPDCloseAndLockDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     WPDCloseAndLockDoor(ents.FindByName('controlroomdoor')[1])
     hook.Add('AcceptInput', 'WPD_ControlRoomButton', function(ent, input, activ, callr)
-      if input ~= 'Use' or ent:MapCreationID() ~= CONTROL_ROOM_BUTTON_INDEX then return end
+      if input ~= 'Use' or ent:MapCreationID() ~= CONTROL_ROOM_BUTTON_ID then return end
       APADV.SendMapLocation('Control Room Button')
       hook.Remove('AcceptInput', 'WPD_ControlRoomButton')
     end)
@@ -67,29 +55,29 @@ return {
   end,
 
   OnFullConnect = function(self)
-    if APADV.MapLocationStatus('Control Room Button') == true then
-      ents.GetMapCreatedEntity(CONTROL_ROOM_BUTTON_INDEX):Fire('PressIn')
+    if APADV.MapLocationStatus('Control Room Button') then
+      ents.GetMapCreatedEntity(CONTROL_ROOM_BUTTON_ID):Fire('PressIn')
     end
   end,
 
   MapItemFuncs = {
     ['Destruction of Company Property'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       for _, hurtable in ipairs(hurtables) do
-        ents.GetMapCreatedEntity(hurtable.index):TakeDamage(100)
+        ents.GetMapCreatedEntity(hurtable.id):TakeDamage(100)
       end
     end,
     ['First Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('firstdoor')[1])
     end,
     ['Fridge Doors'] = function(iList)
-      if #iList == 0 then return end
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_INDEX))
-      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_INDEX))
+      if iList[1] == nil then return end
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_LEFT_ID))
+      WPDOpenLockedDoor(ents.GetMapCreatedEntity(FRIDGE_DOOR_RIGHT_ID))
     end,
     ['Control Room Door'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       WPDOpenLockedDoor(ents.FindByName('controlroomdoor')[1])
     end
   }

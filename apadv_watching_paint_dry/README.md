@@ -1,6 +1,6 @@
 # Watching Paint Dry: The apAdventure
 
-Version 1.0.0
+Version 1.0.1
 
 > *Welcome to **Watching Paint Dry: The apAdventure**. In this apAdventure, you sit, and watch paint dry, in 4-dimensional-time. Feel free to hunt down the checks throughout the maps, but do not touch the walls until you have goaled. Have fun!*
 
@@ -16,7 +16,7 @@ Version 1.0.0
 With this config, almost the entirety of **Watching Paint Dry: The Game** is now randomised by apAdventure. Watch grass grow, blow up the Earth, travel 4 hours into the future, kill infinitely-spawning zombies, teleport to the wrong game... all in an unpredictable order. (There are even some extra locations that I added because they seemed like funny ideas.)
 
 > [!NOTE]
-> **Watching Paint Dry: The Game** is very **The Stanley Parable**-esque, so I made the conscious decision that doors in this config cannot be interacted with, and are either closed or opened depending on whether or not you have their associated items. This is by no means how every other community config should be made, it was a choice made for this project only.
+> **Watching Paint Dry: The Game** is very **The Stanley Parable**-esque, so I made the conscious decision that doors in this config are almost always locked from the start, cannot be interacted with, and are either closed or opened depending on whether or not you have their associated items. This is by no means how every other community config should be made, it was a choice made for this project only.
 
 ## Maps
 
@@ -66,9 +66,12 @@ For other locations and items, refer to a generated Archipelago multiworld's spo
 
 ## Known Issues
 
-- You can't get the *Detach Picture* location by hitting the picture with a weapon; I need to design a hook that checks the position of the picture every so often and award the check if it isn't normal
-- In `wpd_st`, it may be that the *Key* item disappears after players time travel; just re-enter the map and grab it that way
-- In `wpd_mn`, after you've destroyed the Earth and when you return to the map, the Earth will disappear instead of appearing destroyed
+- You can't get the *Detach Picture* location by hitting the picture with a weapon; I need to design a hook that checks the position of the picture every half a second and awards the check if it isn't where it should be.
+- `wpd_m`: There is a chance for the castle music to play twice and for no other sounds to play after that (other than you dying of course).
+- `wpd_mn`: After you've destroyed the Earth and when you return to the map, the Earth will disappear instead of appearing destroyed. Just think of it as the Earth's fragments having spread apart and now being completely out of view.
+- `wpd_nh`: Outside of singleplayer, when spawning in the *Narrator's Room*, it's possible for the narrator to speak so early that you don't hear him.
+- `wpd_sp`/`wpd_uni`/`wpd_zm`: If you use a weapon that disintegrates NPCs and props rather than breaking them (e.g., the Gluon Gun), you won't be able to get *Destruction of Company Property*, *Break Crate #* or *Kill # Zombies* checks respectively.
+- `wpd_st`: It may be that the *Key* item disappears after players time travel; just re-enter the map and grab it that way.
 
 ## AI Disclosure
 

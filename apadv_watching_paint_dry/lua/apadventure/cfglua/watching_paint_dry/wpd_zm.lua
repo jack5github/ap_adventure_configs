@@ -1,80 +1,69 @@
+--Although it is possible to kill 25 zombies with 100 health and suit charge using only a Crowbar, the logic is intentionally structured with the expectation that you don't have any suit charge, so that those that don't know the strategy aren't inconvenienced
+
 local WEAPONS = {
   {
     ['name'] = 'Suit Charger',
-    ['index'] = 1367,
+    ['id'] = 1367,
     ['pos'] = Vector(-191.62, -184, 47.93)
   },
   {
     ['name'] = 'Health Charger',
-    ['index'] = 1368,
+    ['id'] = 1368,
     ['pos'] = Vector(-191.62, -216, 47.93)
   },
   {
     ['name'] = 'Pulse Rifle',
-    ['index'] = 1357,
+    ['id'] = 1357,
     ['pos'] = Vector(-428, -216, 70)
   },
   {
     ['name'] = 'SMG',
-    ['index'] = 1360,
+    ['id'] = 1360,
     ['pos'] = Vector(-428, -178.01, 70)
   },
   {
     ['name'] = 'Shotgun',
-    ['index'] = 1361,
+    ['id'] = 1361,
     ['pos'] = Vector(-430.27, -138, 70)
   },
   {
     ['name'] = '.357 Revolver',
-    ['index'] = 1356,
+    ['id'] = 1356,
     ['pos'] = Vector(-430, -222, 51.73)
   },
   {
     ['name'] = 'Pistol',
-    ['index'] = 1358,
+    ['id'] = 1358,
     ['pos'] = Vector(-430, -189.61, 52.72)
   },
   {
     ['name'] = 'RPG',
-    ['index'] = 1359,
+    ['id'] = 1359,
     ['pos'] = Vector(-428, -126, 47.75)
   },
   {
     ['name'] = 'Crowbar',
-    ['index'] = 1375,
+    ['id'] = 1375,
     ['pos'] = Vector(-423.02, -221.01, 33.11)
   }
 }
-
 local zombiesInvading = -1
 
 local WPDStartSpawningZombies = function()
   local zombieSounds = ents.FindByName('zombie_call')
-  if #zombieSounds > 0 then
+  if zombieSounds[1] ~= nil then
     zombieSounds[1]:Fire('PlaySound')
   end
   local zombieSpawners = ents.FindByName('zombiespawner')
-  if #zombieSpawners > 0 then
+  if zombieSpawners[1] ~= nil then
     zombieSpawners[1]:Fire('Enable')
   end
 end
 
-local supplyCrates = {
-  { ['index'] = 1363, ['opened'] = false },
-  { ['index'] = 1399, ['opened'] = false },
-  { ['index'] = 1435, ['opened'] = false },
-  { ['index'] = 1434, ['opened'] = false },
-  { ['index'] = 1436, ['opened'] = false },
-  { ['index'] = 1437, ['opened'] = false },
-  { ['index'] = 1366, ['opened'] = false },
-  { ['index'] = 1362, ['opened'] = false },
-  { ['index'] = 1364, ['opened'] = false },
-  { ['index'] = 1365, ['opened'] = false },
-  { ['index'] = 1400, ['opened'] = false },
-}
+local ammoCrates = { 1363, 1399, 1435, 1434, 1436, 1437, 1366, 1362, 1364, 1365, 1400 }
 local zombiesKilled = 0
 
-local apAdvTable = {
+local apadvTable = {
   PostCfgLoad = function(self)
     ents.FindByName('spawn_trigger')[1]:Fire('Kill')
     hook.Add('PlayerInitialSpawn', 'WPD_FirstSpawn', function(ply)
@@ -89,26 +78,20 @@ local apAdvTable = {
       end)
       hook.Remove('PlayerInitialSpawn', 'WPD_FirstSpawn')
     end)
-    hook.Add('AcceptInput', 'WPD_OpenAllSupplyCrates', function(ent, input, activ, callr)
+    hook.Add('AcceptInput', 'WPD_OpenAllAmmoCrates', function(ent, input, activ, callr)
       if input ~= 'Use' then return end
-      local supplyCratesOpened = 0
-      for _, supplyCrate in ipairs(supplyCrates) do
-        if ent:MapCreationID() == supplyCrate.index then
-          if not supplyCrate.opened then
-            supplyCrate.opened = true
-          end
-        end
-        if supplyCrate.opened then
-          supplyCratesOpened = supplyCratesOpened + 1
+      for i, ammoCrate in ipairs(ammoCrates) do
+        if ent:MapCreationID() == ammoCrate then
+          table.remove(ammoCrates, i)
+          break
         end
       end
-      if supplyCratesOpened == #supplyCrates then
-        APADV.SendMapLocation('Open All Supply Crates')
-        hook.Remove('AcceptInput', 'WPD_OpenAllSupplyCrates')
-      end
+      if ammoCrates[1] ~= nil then return end
+      APADV.SendMapLocation('Open All Ammo Crates')
+      hook.Remove('AcceptInput', 'WPD_OpenAllAmmoCrates')
     end)
     for _, weapon in ipairs(WEAPONS) do
-      ents.GetMapCreatedEntity(weapon.index):SetPos(
+      ents.GetMapCreatedEntity(weapon.id):SetPos(
         Vector(-500, weapon.pos.y, weapon.pos.z) --Move out of bounds
       )
     end
@@ -121,7 +104,7 @@ local apAdvTable = {
           APADV.SendMapLocation('Kill ' .. amt5 .. ' Zombies')
           if amt == 5 then
             local zombieSpawners = ents.FindByName('zombiespawner')
-            if #zombieSpawners > 0 then
+            if zombieSpawners[1] ~= nil then
               zombieSpawners[1]:Fire('Disable')
               zombieSpawners[1]:Fire('Kill', nil, 0.01)
             end
@@ -136,12 +119,11 @@ local apAdvTable = {
 
   CfgUnload = function(self)
     hook.Remove('PlayerInitialSpawn', 'WPD_FirstSpawn')
-    zombiesInvading = -1
-    hook.Remove('AcceptInput', 'WPD_OpenAllSupplyCrates')
+    hook.Remove('AcceptInput', 'WPD_OpenAllAmmoCrates')
   end,
 
   OnFullConnect = function(self)
-    if APADV.MapLocationStatus('Kill 25 Zombies') == true then
+    if APADV.MapLocationStatus('Kill 25 Zombies') then
       ents.FindByName('zombie_call')[1]:Fire('Kill')
       ents.FindByName('zombiespawner')[1]:Fire('Kill')
       for _, zombie in ipairs(ents.FindByClass('npc_fastzombie')) do
@@ -152,7 +134,7 @@ local apAdvTable = {
 
   MapItemFuncs = {
     ['Zombie Invasion'] = function(iList)
-      if #iList == 0 then return end
+      if iList[1] == nil then return end
       print("'Zombie Invasion' item collected")
       zombiesInvading = zombiesInvading + 1
       if zombiesInvading == 1 then
@@ -163,9 +145,9 @@ local apAdvTable = {
   }
 }
 for _, weapon in ipairs(WEAPONS) do
-  apAdvTable.MapItemFuncs[weapon.name] = function(iList)
-    if #iList == 0 then return end
-    ents.GetMapCreatedEntity(weapon.index):SetPos(weapon.pos)
+  apadvTable.MapItemFuncs[weapon.name] = function(iList)
+    if iList[1] == nil then return end
+    ents.GetMapCreatedEntity(weapon.id):SetPos(weapon.pos)
   end
 end
-return apAdvTable
+return apadvTable

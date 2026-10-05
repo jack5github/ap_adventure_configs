@@ -1,0 +1,1 @@
+{"ver":"v1_1","info":{"nicename":"what we left behind","requirements":[],"hev":false},"reg":{"Box Stairs":{"ammo":[]},"Rotated Room":{"ammo":[]},"Chute":{"ammo":[]},"L Stairs":{"ammo":[]}},"connect":{"Box Stairs":{"Chute":{"twoway":false}},"Start":{"L Stairs":{"twoway":false}},"Chute":{"Rotated Room":{"twoway":false}},"L Stairs":{"Box Stairs":{"twoway":false}}}}

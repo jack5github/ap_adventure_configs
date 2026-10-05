@@ -1,6 +1,6 @@
 include('shared.lua')
 
-local refusedMario = false
+local refusedMario
 
 return {
   PostCfgLoad = function(self)
@@ -36,11 +36,10 @@ return {
 
   CfgUnload = function(self)
     hook.Remove('PlayerInitialSpawn', 'WPD_FirstSpawn')
-    refusedMario = false
   end,
 
   OnFullConnect = function(self)
-    if APADV.MapLocationStatus('Refuse Mario') == true then
+    if APADV.MapLocationStatus('Refuse Mario') then
       refusedMario = true
     end
   end
