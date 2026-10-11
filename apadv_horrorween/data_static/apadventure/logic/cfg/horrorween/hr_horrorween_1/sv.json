@@ -1,0 +1,285 @@
+{
+	"exit": {
+		"House 6 Secret": { "reg": "House 6 Secret Interior" },
+		"Ending": { "reg": "Ending" },
+		"House 1 Bedroom": { "reg": "House 1 Interior" },
+		"House 4": { "reg": "House 4 Interior" }
+	},
+	"entr": {
+		"House 4": { "reg": "House 4 Interior" },
+		"House 1 Bedroom": { "reg": "House 1 Interior" },
+		"House 6 Secret": { "reg": "House 6 Secret Interior" }
+	},
+	"lctn": {
+		"House 1 Interior": {
+			"House 1 Backyard Shed": [],
+			"House 1 Golden Coin": [],
+			"House 1 Bathroom": [],
+			"House 1 Answer Phone": [],
+			"House 1 Answer Phone Again": [],
+			"House 1 Backyard Tree": [],
+			"House 1 Gas Cabinet": [],
+			"House 1 Use Computer": [],
+			"House 1 Lone Shelf": [],
+			"House 1 Floor Mail": [],
+			"House 1 Try Taped Door": []
+		},
+		"Street 4-5": {
+			"House 5 Mansion Key": [],
+			"House 5 Ring Doorbell": [],
+			"House 5 Sidewalk": []
+		},
+		"House 2 Interior": {
+			"House 2 Supply Room": [],
+			"House 2 Golden Coin": [],
+			"House 2 Kill Indoor Zombie": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "House 2 Indoor Zombie"
+				}
+			},
+			"House 2 Weak Knife": [],
+			"House 2 Zombie Room": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "House 2 Indoor Zombie"
+				}
+			}
+		},
+		"House 5 Interior": {
+			"House 5 Turn Statue": [],
+			"House 5 Radio": [],
+			"House 5 Shadow Man Jumpscare": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "House 5 Shadow Man"
+				}
+			},
+			"House 5 Lower Floor": []
+		},
+		"Sewer Past Blockage Door": {
+			"Sewer Detonate Blockage": {
+				"access": {
+					"type": "and",
+					"nodes": [
+						{ "type": "mapitem", "count": 1, "item": "Bomb" },
+						{ "type": "mapitem", "count": 1, "item": "Detonator" }
+					]
+				}
+			},
+			"Sewer Bomb": [],
+			"Sewer Cell Jumpscare": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Sewer Door to Cell"
+				}
+			},
+			"Sewer Locker Jumpscare": [],
+			"Sewer Detonator": []
+		},
+		"Unreality Hallways": { "Unreality Hallways Junction": [] },
+		"Unreality Pride Rooms": {
+			"Unreality Spell Pride": [],
+			"Unreality Lower Floor": []
+		},
+		"House 3 Behind House 3 Well Door": { "House 3 Church Key": [] },
+		"House 6 Inner Interior": {
+			"House 6 Kill Upper Zombies": [],
+			"House 6 Chair": [],
+			"House 6 Kill Fast Zombie": []
+		},
+		"House 8 Interior": {
+			"House 8 Painting Disappeared": {
+				"access": { "type": "mapitem", "count": 1, "item": "House 8 Cutscene" }
+			},
+			"House 8 Bedroom": []
+		},
+		"Sewer Key Rooms": { "Sewer Key": [], "Sewer View Zombie on Camera": [] },
+		"Ending Liars Room": { "Ending Liars Room": [] },
+		"House 6 Interior": {
+			"House 6 Break Ladder Padlock": [],
+			"House 6 Front Door Jumpscare": []
+		},
+		"House 6 Secret Tiny Interior": {
+			"House 6 Secret Kill Zombie": [],
+			"House 6 Secret Amazing Banana": [],
+			"House 6 Secret Golden Coin": []
+		},
+		"Unreality Wrath Rooms": {
+			"Unreality Kill Wrath Zombies": [],
+			"Unreality Hidden Key": []
+		},
+		"Unreality Key Room": { "Unreality Nightmare Key": [] },
+		"House 8 Backyard": {
+			"House 8 Try House 18 Door": [],
+			"House 8 Confront Painting": {
+				"access": { "type": "mapitem", "count": 1, "item": "House 8 Cutscene" }
+			}
+		},
+		"Unreality Exit Room": {
+			"Unreality Exit": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Unreality Exit Door"
+				}
+			}
+		},
+		"House 5 Bathroom": { "House 5 Rusty Key": [] },
+		"Ending Boobs Room": { "Ending Boobs Room": [] },
+		"Street 1-3": {
+			"House 2 Swings": [],
+			"House 2 Shed": [],
+			"House 2 Kill Outdoor Zombie": [],
+			"Church Sidewalk": [],
+			"House 3 Press Well Bricks": [],
+			"House 1 Ring Doorbell": [],
+			"House 1 Dumpster": [],
+			"House 1 Front Porch": [],
+			"House 2 Break Ladder": [],
+			"House 2 Break Boards": [],
+			"House 2 Ring Doorbell": [],
+			"House 3 Ring Doorbell": []
+		},
+		"Sewer Past Blockage": { "Sewer Past Blockage": [] },
+		"House 5 Rusty Room": {
+			"House 5 Pull Lever": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "House 5 Door Past Unreality"
+				}
+			},
+			"House 5 Enter Unreality": [],
+			"House 5 Mansion Gate Key": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "House 5 Door Past Unreality"
+				}
+			}
+		},
+		"Sewer Hallways": {
+			"Sewer Narrow Hallway": [],
+			"Sewer Pistol": [],
+			"Sewer Golden Coin": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Sewer Door to Coin"
+				}
+			},
+			"Sewer Behind Grate": [],
+			"Sewer Kill Zombies": {
+				"access": { "type": "mapitem", "count": 1, "item": "Sewer Zombies" }
+			},
+			"Sewer Door Hole": [],
+			"Sewer Corkboard": []
+		},
+		"Unreality Envy Rooms": {
+			"Unreality Gluttony Blocks": [],
+			"Unreality Touch Envy Baby": [],
+			"Unreality Gluttony Jumpscare": [],
+			"Unreality Kill Envy Hoods": []
+		},
+		"Unreality Sloth Rooms": {
+			"Unreality Kill Sloth Zombie": [],
+			"Unreality Break Sloth Chain": []
+		},
+		"House 6 Backyard": {
+			"House 8 Ring Doorbell": [],
+			"House 6 Back Path": [],
+			"House 7": []
+		},
+		"Unreality Start": { "Unreality Old Key": [] },
+		"Unreality Blood Lines": {
+			"Unreality Blood Lines Corner": [],
+			"Unreality Open Way to Key": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Unreality Light to Key"
+				}
+			},
+			"Unreality Blood Lines Junction": [],
+			"Unreality Open Way to Envy": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Unreality Light to Envy"
+				}
+			},
+			"Unreality Red Hood Jumpscare": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Unreality Light to Key"
+				}
+			},
+			"Unreality Open Way to Wall": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Unreality Light to Wall"
+				}
+			},
+			"Unreality Open Way to Exit": {
+				"access": {
+					"type": "mapitem",
+					"count": 1,
+					"item": "Unreality Light to Exit"
+				}
+			}
+		},
+		"Ending Party Room": { "Ending Party Room": [] },
+		"House 4 Interior": {
+			"House 4 Checkpoint": [],
+			"House 4 Back Porch": [],
+			"House 4 Kitchen": []
+		},
+		"House 6 Lower Interior": {
+			"House 6 Break Pot": [],
+			"House 6 Kill Lower Zombies": []
+		},
+		"House 3 Shed": { "House 3 Shed": [] },
+		"Courtyard": {
+			"Courtyard Gate Jumpscare": [],
+			"Courtyard Shed Jumpscare": [],
+			"Courtyard Kids Slide": [],
+			"Courtyard Yellow Shed": [],
+			"Courtyard Sidewalk": [],
+			"Courtyard Bench": [],
+			"Courtyard Middle": []
+		},
+		"Sewer Vent": { "Sewer Vent": [] },
+		"Church": {
+			"Church Kill Ghosts": [],
+			"Church Left Window": [],
+			"Church Holy Might": [],
+			"Church Gravestones": [],
+			"Church Right Window": [],
+			"Church Kill Zombie": [],
+			"Church Shed": [],
+			"Church Golden Coin": []
+		},
+		"House 6 Secret Interior": {
+			"House 6 Secret Button Under Box": [],
+			"House 6 Secret Checkpoint": []
+		},
+		"House 5 Coin Room": { "House 5 Golden Coin": [] },
+		"Unreality Lust Rooms": {
+			"Unreality Break Lust Chain": [],
+			"Unreality Lust Bed": []
+		},
+		"House 6 Upper Interior": { "House 6 SMG": [], "House 6 Pull Lever": [] },
+		"Ending": {
+			"Ending Credits": [],
+			"Ending Dicks Room": [],
+			"House 8 Defeat Zombie Painting": []
+		}
+	}
+}

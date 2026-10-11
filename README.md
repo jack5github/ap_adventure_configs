@@ -8,6 +8,7 @@ This repository contains all of Jack5's custom configuration files for the [Garr
 
 - **[Watching Paint Dry: The apAdventure](apadv_watching_paint_dry/README.md)**
 - **[CromulentVille 2 apAdventure](apadv_cromulentville_2/README.md)** (incomplete)
+- **[Horrorween](apadv_horrorween/README.md)**
 
 ## Installation
 

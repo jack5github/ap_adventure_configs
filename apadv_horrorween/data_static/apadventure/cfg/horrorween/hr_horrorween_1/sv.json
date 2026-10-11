@@ -1,0 +1,1064 @@
+{
+	"ver": "v1",
+	"maprev": 1806,
+	"exitaccess": [],
+	"entraccess": [],
+	"lctnaccess": {
+		"House 8 Painting Disappeared": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 8 Cutscene"
+		},
+		"House 2 Kill Indoor Zombie": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 2 Indoor Zombie"
+		},
+		"Sewer Cell Jumpscare": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Sewer Door to Cell"
+		},
+		"Sewer Detonate Blockage": {
+			"type": "and",
+			"nodes": [
+				{ "type": "mapitem", "count": 1, "item": "Bomb" },
+				{ "type": "mapitem", "count": 1, "item": "Detonator" }
+			]
+		},
+		"Sewer Golden Coin": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Sewer Door to Coin"
+		},
+		"House 5 Pull Lever": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 5 Door Past Unreality"
+		},
+		"House 2 Zombie Room": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 2 Indoor Zombie"
+		},
+		"Unreality Open Way to Exit": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Unreality Light to Exit"
+		},
+		"Unreality Open Way to Key": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Unreality Light to Key"
+		},
+		"Unreality Red Hood Jumpscare": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Unreality Light to Key"
+		},
+		"House 5 Shadow Man Jumpscare": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 5 Shadow Man"
+		},
+		"House 5 Mansion Gate Key": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 5 Door Past Unreality"
+		},
+		"Unreality Exit": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Unreality Exit Door"
+		},
+		"Unreality Open Way to Envy": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Unreality Light to Envy"
+		},
+		"Unreality Open Way to Wall": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Unreality Light to Wall"
+		},
+		"Sewer Kill Zombies": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "Sewer Zombies"
+		},
+		"House 8 Confront Painting": {
+			"type": "mapitem",
+			"count": 1,
+			"item": "House 8 Cutscene"
+		}
+	},
+	"delname": [],
+	"sav": {
+		"Mins": "[-1261.187 -1 -11.6449]",
+		"Constraints": [],
+		"Maxs": "[1 10266.6758 31.8155]",
+		"Entities": {
+			"3699": {
+				"Skin": 0,
+				"MaxHealth": 1,
+				"ColGroup": 0,
+				"Persistent": false,
+				"Name": "",
+				"Mins": "[-98.8917 -13.7416 -18.3493]",
+				"CurHealth": 0,
+				"Pos": "[-1170.3302 10183.4688 10.1072]",
+				"PhysicsObjects": {
+					"0": {
+						"Sleep": true,
+						"Pos": "[-1170.3302 10183.4688 10.1072]",
+						"Frozen": true,
+						"Angle": "{0.0635 -137.9714 -56.4934}"
+					}
+				},
+				"Class": "prop_physics",
+				"FlexScale": 1,
+				"Maxs": "[101.6863 13.8039 18.3697]",
+				"Model": "models/props_junk/ibeam01a_cluster01.mdl",
+				"Angle": "{0.0635 -137.9714 -56.4934}"
+			}
+		}
+	},
+	"lctn": [
+		{
+			"pos": "[-977.9772 -1211.6829 71.4527]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Answer Phone"
+		},
+		{
+			"pos": "[-853.9688 -132.5238 81.8265]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 2 Ring Doorbell"
+		},
+		{
+			"pos": "[-788.7558 692.4688 38.0951]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 2 Break Boards"
+		},
+		{
+			"pos": "[-920.6961 308.3221 58.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 2 Interior",
+			"name": "House 2 Weak Knife"
+		},
+		{
+			"pos": "[-923.2507 169.5672 58.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 2 Interior",
+			"name": "House 2 Golden Coin"
+		},
+		{
+			"pos": "[-1130.1085 -204.144 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 2 Interior",
+			"name": "House 2 Kill Indoor Zombie"
+		},
+		{
+			"pos": "[-1174.4875 2856.053 -178.8798]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 3 Behind House 3 Well Door",
+			"name": "House 3 Church Key"
+		},
+		{
+			"pos": "[-831.7631 2790.3748 -189.3664]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 3 Press Well Bricks"
+		},
+		{
+			"pos": "[-703.8683 1833.829 56.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Kill Ghosts"
+		},
+		{
+			"pos": "[-1583.9552 2227.9558 38.3278]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Golden Coin"
+		},
+		{
+			"pos": "[-934.7323 -1515.2734 234.9861]",
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Bathroom"
+		},
+		{
+			"pos": "[-1154.3816 -1398.4722 224.4409]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Try Taped Door"
+		},
+		{
+			"pos": "[-1285.9688 -1284.8794 -204.6457]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Golden Coin"
+		},
+		{
+			"pos": "[-1057.9016 -1685.8737 48.6565]",
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Gas Cabinet"
+		},
+		{
+			"pos": "[-1632.5527 -1023.5507 90.3055]",
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Backyard Shed"
+		},
+		{
+			"pos": "[-1599.991 -1537.2587 21.1634]",
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Backyard Tree"
+		},
+		{
+			"pos": "[-1378.1228 252.5759 28.9647]",
+			"ang": "{0 0 0}",
+			"reg": "House 2 Interior",
+			"name": "House 2 Supply Room"
+		},
+		{
+			"pos": "[-1045.5649 -569.3446 34.423]",
+			"ang": "{0 0 0}",
+			"reg": "House 2 Interior",
+			"name": "House 2 Zombie Room"
+		},
+		{
+			"pos": "[-839.349 -479.6686 118.5333]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 2 Break Ladder"
+		},
+		{
+			"pos": "[-242.3579 526.6533 52.6256]",
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 2 Swings"
+		},
+		{
+			"pos": "[-492.7299 766.6335 0]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 2 Kill Outdoor Zombie"
+		},
+		{
+			"pos": "[-127.7815 1058.9751 38.7538]",
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 2 Shed"
+		},
+		{
+			"pos": "[-423.3449 3647.656 57.1387]",
+			"ang": "{0 0 0}",
+			"reg": "House 3 Shed",
+			"name": "House 3 Shed"
+		},
+		{
+			"pos": "[-837.9688 3310.5605 80.3182]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 3 Ring Doorbell"
+		},
+		{
+			"pos": "[-673.9688 -1494.6853 79.1719]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 1 Ring Doorbell"
+		},
+		{
+			"pos": "[-910.4251 2382.7002 29.4168]",
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Shed"
+		},
+		{
+			"pos": "[-450.6487 1386.9138 27.9982]",
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Gravestones"
+		},
+		{
+			"pos": "[-1652.3964 1339.0348 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Kill Zombie"
+		},
+		{
+			"pos": "[-1366.2019 1369.759 31.6074]",
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Left Window"
+		},
+		{
+			"pos": "[-1340.8002 1736.6255 40.8321]",
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Right Window"
+		},
+		{
+			"pos": "[-1057.9819 4936.5361 -240.4608]",
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Behind Grate"
+		},
+		{
+			"pos": "[-2150.7693 6658.0439 -255.726]",
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Corkboard"
+		},
+		{
+			"pos": "[-2134.4678 4487.0933 -279.1431]",
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Door Hole"
+		},
+		{
+			"pos": "[-2431.4653 4333.8174 -239.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Pistol"
+		},
+		{
+			"pos": "[-2787.1021 3949.1836 -199.517]",
+			"ang": "{0 0 0}",
+			"reg": "Sewer Vent",
+			"name": "Sewer Vent"
+		},
+		{
+			"pos": "[-2533.0981 4915.4736 -255.7188]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Key Rooms",
+			"name": "Sewer Key"
+		},
+		{
+			"pos": "[-2457.4448 4770.6567 -194.4961]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Key Rooms",
+			"name": "Sewer View Zombie on Camera"
+		},
+		{
+			"pos": "[-2169.2944 5322.0576 -287.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Kill Zombies"
+		},
+		{
+			"pos": "[-131.5352 4062.0347 -287.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Past Blockage Door",
+			"name": "Sewer Detonate Blockage"
+		},
+		{
+			"pos": "[-678.7667 4393.4067 -263.0426]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Past Blockage Door",
+			"name": "Sewer Bomb"
+		},
+		{
+			"pos": "[324.8469 4801.0098 -287.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Past Blockage Door",
+			"name": "Sewer Locker Jumpscare"
+		},
+		{
+			"pos": "[497.1915 5201.2188 -267.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Past Blockage Door",
+			"name": "Sewer Detonator"
+		},
+		{
+			"pos": "[-112.6737 5052.7485 23.3503]",
+			"ang": "{0 0 0}",
+			"reg": "House 4 Interior",
+			"name": "House 4 Kitchen"
+		},
+		{
+			"pos": "[-818.6271 4923.4404 68.4167]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 4 Interior",
+			"name": "House 4 Checkpoint"
+		},
+		{
+			"pos": "[-819.6453 4663.8076 43.187]",
+			"ang": "{0 0 0}",
+			"reg": "House 4 Interior",
+			"name": "House 4 Back Porch"
+		},
+		{
+			"pos": "[-213.8372 5762.9189 52.3973]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 4-5",
+			"name": "House 5 Mansion Key"
+		},
+		{
+			"pos": "[-725.9688 6770.1519 82.4551]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Street 4-5",
+			"name": "House 5 Ring Doorbell"
+		},
+		{
+			"pos": "[-804.2409 6515.6084 288.0874]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Interior",
+			"name": "House 5 Turn Statue"
+		},
+		{
+			"pos": "[-1062.2571 6342.4878 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Interior",
+			"name": "House 5 Shadow Man Jumpscare"
+		},
+		{
+			"pos": "[-1233.124 6559.9023 44.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Bathroom",
+			"name": "House 5 Rusty Key"
+		},
+		{
+			"pos": "[-3311.3735 5827.1167 2076.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Start",
+			"name": "Unreality Old Key"
+		},
+		{
+			"pos": "[-4168.6304 6787.3926 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Wrath Rooms",
+			"name": "Unreality Kill Wrath Zombies"
+		},
+		{
+			"pos": "[-4228.4551 6698.0312 2095.1841]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Wrath Rooms",
+			"name": "Unreality Hidden Key"
+		},
+		{
+			"pos": "[-1151.4031 6783.8438 2061.0798]",
+			"ang": "{0 0 0}",
+			"reg": "Unreality Hallways",
+			"name": "Unreality Hallways Junction"
+		},
+		{
+			"pos": "[-1269.9688 8344.7129 2098.0879]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Lust Rooms",
+			"name": "Unreality Break Lust Chain"
+		},
+		{
+			"pos": "[-1151.1541 8466.7451 2079.8635]",
+			"ang": "{0 0 0}",
+			"reg": "Unreality Lust Rooms",
+			"name": "Unreality Lust Bed"
+		},
+		{
+			"pos": "[-1150.2371 5695.7422 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Sloth Rooms",
+			"name": "Unreality Kill Sloth Zombie"
+		},
+		{
+			"pos": "[-1178.8032 5162.1709 2550.9092]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Sloth Rooms",
+			"name": "Unreality Break Sloth Chain"
+		},
+		{
+			"pos": "[511.1651 7100.3828 2136.5798]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Pride Rooms",
+			"name": "Unreality Spell Pride"
+		},
+		{
+			"pos": "[444.8993 7212.6421 1867.1348]",
+			"ang": "{0 0 0}",
+			"reg": "Unreality Pride Rooms",
+			"name": "Unreality Lower Floor"
+		},
+		{
+			"pos": "[1761.3571 5728.0312 2098.2898]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Envy Rooms",
+			"name": "Unreality Touch Envy Baby"
+		},
+		{
+			"pos": "[1674.8511 6155.0591 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Envy Rooms",
+			"name": "Unreality Kill Envy Hoods"
+		},
+		{
+			"pos": "[2274.9475 6271.853 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Envy Rooms",
+			"name": "Unreality Gluttony Blocks"
+		},
+		{
+			"pos": "[1894.6521 6304.7881 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Envy Rooms",
+			"name": "Unreality Gluttony Jumpscare"
+		},
+		{
+			"pos": "[3170.5657 6280.8481 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Open Way to Wall"
+		},
+		{
+			"pos": "[1248.2955 7536.3325 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Red Hood Jumpscare"
+		},
+		{
+			"pos": "[1244.631 8313.7715 2070.0435]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Key Room",
+			"name": "Unreality Nightmare Key"
+		},
+		{
+			"pos": "[-2047.4722 6454.6826 224.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Exit Room",
+			"name": "Unreality Exit"
+		},
+		{
+			"pos": "[-633.3837 7493.4263 15.6957]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Gate Jumpscare"
+		},
+		{
+			"pos": "[-450.3533 8069.3984 154.9552]",
+			"ang": "{0 0 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Kids Slide"
+		},
+		{
+			"pos": "[-1118.9915 8858.125 85.5081]",
+			"ang": "{0 0 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Middle"
+		},
+		{
+			"pos": "[-829.9901 10213.374 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Shed Jumpscare"
+		},
+		{
+			"pos": "[-1733.5619 9179.4189 42.9072]",
+			"ang": "{0 0 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Bench"
+		},
+		{
+			"pos": "[-3900.4153 9981.0205 16.0313]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Interior",
+			"name": "House 6 Front Door Jumpscare"
+		},
+		{
+			"pos": "[-2272.1223 10800 12.662]",
+			"ang": "{0 0.077 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Sidewalk"
+		},
+		{
+			"pos": "[-2665.0525 9683.8496 60.5312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret Checkpoint"
+		},
+		{
+			"pos": "[-2706.6272 9500.1748 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret Button Under Box"
+		},
+		{
+			"pos": "[-2662.2778 9076.5664 31.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Secret Tiny Interior",
+			"name": "House 6 Secret Golden Coin"
+		},
+		{
+			"pos": "[-2710.375 8949.1895 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Secret Tiny Interior",
+			"name": "House 6 Secret Kill Zombie"
+		},
+		{
+			"pos": "[-2698.6189 8896.1436 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Secret Tiny Interior",
+			"name": "House 6 Secret Amazing Banana"
+		},
+		{
+			"pos": "[-3507.8184 9706.0312 162.1057]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Interior",
+			"name": "House 6 Break Ladder Padlock"
+		},
+		{
+			"pos": "[-3675.6431 10034.3691 240.2303]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Upper Interior",
+			"name": "House 6 SMG"
+		},
+		{
+			"pos": "[-3746.4304 9882.0312 303.3668]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Upper Interior",
+			"name": "House 6 Pull Lever"
+		},
+		{
+			"pos": "[-3800.9805 9759.3857 224.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Inner Interior",
+			"name": "House 6 Kill Upper Zombies"
+		},
+		{
+			"pos": "[-3746.9863 9439.543 224.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Inner Interior",
+			"name": "House 6 Kill Fast Zombie"
+		},
+		{
+			"pos": "[-3563.9219 9594.6758 16.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Lower Interior",
+			"name": "House 6 Kill Lower Zombies"
+		},
+		{
+			"pos": "[-3450.3853 9584.7549 249.3542]",
+			"ang": "{0 0 0}",
+			"reg": "House 6 Inner Interior",
+			"name": "House 6 Chair"
+		},
+		{
+			"pos": "[-4416.5249 9638.0732 21.9395]",
+			"ang": "{0 0 0}",
+			"reg": "House 6 Backyard",
+			"name": "House 6 Back Path"
+		},
+		{
+			"pos": "[-5091.27 10048.1982 16.9278]",
+			"ang": "{0 0 0}",
+			"reg": "House 6 Backyard",
+			"name": "House 7"
+		},
+		{
+			"pos": "[-6373.9688 10181.2959 81.7524]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Backyard",
+			"name": "House 8 Ring Doorbell"
+		},
+		{
+			"pos": "[-7430.439 9672.7139 12.4449]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 8 Backyard",
+			"name": "House 8 Try House 18 Door"
+		},
+		{
+			"pos": "[-6658.5146 10549.9688 61.5201]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 8 Interior",
+			"name": "House 8 Painting Disappeared"
+		},
+		{
+			"pos": "[-311.3375 -4253.0195 512.0313]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Ending",
+			"name": "House 8 Defeat Zombie Painting"
+		},
+		{
+			"pos": "[-384.2086 -4121.0674 529.9164]",
+			"ang": "{0 0 0}",
+			"reg": "Ending",
+			"name": "Ending Credits"
+		},
+		{
+			"pos": "[-1212.6855 -3982.4585 554.5632]",
+			"ang": "{0 0 0}",
+			"reg": "Ending Party Room",
+			"name": "Ending Party Room"
+		},
+		{
+			"pos": "[-1296.1633 -4671.7656 528.0807]",
+			"ang": "{0 0 0}",
+			"reg": "Ending",
+			"name": "Ending Dicks Room"
+		},
+		{
+			"pos": "[-431.8152 -4672.2085 527.7359]",
+			"ang": "{0 0 0}",
+			"reg": "Ending Boobs Room",
+			"name": "Ending Boobs Room"
+		},
+		{
+			"pos": "[-958.1486 -1178.0312 79.6526]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Answer Phone Again"
+		},
+		{
+			"pos": "[-1114.007 -1591.6765 159.5955]",
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Lone Shelf"
+		},
+		{
+			"pos": "[-752.7523 3416.6863 -255.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Golden Coin"
+		},
+		{
+			"pos": "[-783.2248 5835.0093 44.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Coin Room",
+			"name": "House 5 Golden Coin"
+		},
+		{
+			"pos": "[-512.0031 -1440.3683 28.2498]",
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 1 Front Porch"
+		},
+		{
+			"pos": "[63.9661 -1951.066 19.9027]",
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "House 1 Dumpster"
+		},
+		{
+			"pos": "[-783.6357 -1694.0807 23.6708]",
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Floor Mail"
+		},
+		{
+			"pos": "[-58.7506 5130.2256 -287.9688]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Sewer Past Blockage Door",
+			"name": "Sewer Cell Jumpscare"
+		},
+		{
+			"pos": "[784.4004 7024.2803 2059.7644]",
+			"ang": "{0 0 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Blood Lines Corner"
+		},
+		{
+			"pos": "[-2293.9802 6258.0312 315.9762]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Rusty Room",
+			"name": "House 5 Mansion Gate Key"
+		},
+		{
+			"pos": "[96.23 3892.9248 -275.9972]",
+			"ang": "{0 0 0}",
+			"reg": "Sewer Past Blockage",
+			"name": "Sewer Past Blockage"
+		},
+		{
+			"pos": "[-557.4681 -1203.2145 279.6755]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 1 Interior",
+			"name": "House 1 Use Computer"
+		},
+		{
+			"pos": "[-1049.4451 7636.6372 29.1848]",
+			"ang": "{0 0 0}",
+			"reg": "Courtyard",
+			"name": "Courtyard Yellow Shed"
+		},
+		{
+			"pos": "[-1629.9492 2223.209 32.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Church",
+			"name": "Church Holy Might"
+		},
+		{
+			"pos": "[-3793.5244 9620.2852 71.7371]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 6 Lower Interior",
+			"name": "House 6 Break Pot"
+		},
+		{
+			"pos": "[2591.291 7265.0845 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Open Way to Exit"
+		},
+		{
+			"pos": "[1248.7943 7952.0674 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Open Way to Key"
+		},
+		{
+			"pos": "[1503.7305 5952.6748 2048.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Open Way to Envy"
+		},
+		{
+			"pos": "[-1375.2767 6657.6895 30.978]",
+			"ang": "{0 0 0}",
+			"reg": "House 5 Interior",
+			"name": "House 5 Lower Floor"
+		},
+		{
+			"pos": "[96.1368 2129.5979 9.645]",
+			"ang": "{0 0 0}",
+			"reg": "Street 1-3",
+			"name": "Church Sidewalk"
+		},
+		{
+			"pos": "[95.8159 6240.2505 9.4819]",
+			"ang": "{0 0 0}",
+			"reg": "Street 4-5",
+			"name": "House 5 Sidewalk"
+		},
+		{
+			"pos": "[-1761.4935 5668.0063 -278.7368]",
+			"ang": "{0 0 0}",
+			"reg": "Sewer Hallways",
+			"name": "Sewer Narrow Hallway"
+		},
+		{
+			"pos": "[-6853.8125 10317.2168 28.9416]",
+			"ang": "{0 0 0}",
+			"reg": "House 8 Interior",
+			"name": "House 8 Bedroom"
+		},
+		{
+			"pos": "[-2398.074 6429.9688 314.5389]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Rusty Room",
+			"name": "House 5 Pull Lever"
+		},
+		{
+			"pos": "[-1360.6566 -4388.9976 522.423]",
+			"ang": "{0 0 0}",
+			"reg": "Ending Liars Room",
+			"name": "Ending Liars Room"
+		},
+		{
+			"pos": "[-7544.2715 10299.1406 13.4707]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 8 Backyard",
+			"name": "House 8 Confront Painting"
+		},
+		{
+			"pos": "[-2048.8572 6622.0371 224.0312]",
+			"dummy": true,
+			"ang": "{0 0 0}",
+			"reg": "House 5 Rusty Room",
+			"name": "House 5 Enter Unreality"
+		},
+		{
+			"pos": "[-1140.5321 6547.6372 232.3376]",
+			"ang": "{0 0 0}",
+			"reg": "House 5 Interior",
+			"name": "House 5 Radio"
+		},
+		{
+			"pos": "[2591.7422 6785.5112 2062.2239]",
+			"ang": "{0 1.232 0}",
+			"reg": "Unreality Blood Lines",
+			"name": "Unreality Blood Lines Junction"
+		}
+	],
+	"exit": [
+		{
+			"ang": "{90 90 0}",
+			"pos": "[-572.3332 -1327.7188 314.6847]",
+			"reg": "House 1 Interior",
+			"name": "House 1 Bedroom"
+		},
+		{
+			"ang": "{90 90 0}",
+			"pos": "[-384.6228 -4479.7188 593.8771]",
+			"reg": "Ending",
+			"name": "Ending"
+		},
+		{
+			"ang": "{90 180 0}",
+			"pos": "[-650.2812 4815.626 95.5332]",
+			"reg": "House 4 Interior",
+			"name": "House 4"
+		},
+		{
+			"ang": "{90 180 0}",
+			"pos": "[-2640.2812 9641.7217 111.8162]",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret"
+		}
+	],
+	"del": [],
+	"start": [],
+	"entr": [
+		{
+			"ang": "{0 180 0}",
+			"pos": "[-560 -1248 225]",
+			"reg": "House 1 Interior",
+			"name": "House 1 Bedroom"
+		},
+		{
+			"ang": "{0 156.3611 0}",
+			"pos": "[-572.6063 -1304.6985 244.2812]",
+			"reg": "House 1 Interior",
+			"name": "House 1 Bedroom"
+		},
+		{
+			"ang": "{0 138.8052 0}",
+			"pos": "[-643.9156 -1295.8866 224.0312]",
+			"reg": "House 1 Interior",
+			"name": "House 1 Bedroom"
+		},
+		{
+			"ang": "{0 175.9962 0}",
+			"pos": "[-604.9621 -1254.6976 224.0312]",
+			"reg": "House 1 Interior",
+			"name": "House 1 Bedroom"
+		},
+		{
+			"ang": "{0 115.5778 0}",
+			"pos": "[-683.4296 4768.8643 16.0312]",
+			"reg": "House 4 Interior",
+			"name": "House 4"
+		},
+		{
+			"ang": "{0 132.7488 0}",
+			"pos": "[-692.3567 4821.7476 16.0312]",
+			"reg": "House 4 Interior",
+			"name": "House 4"
+		},
+		{
+			"ang": "{0 129.7459 0}",
+			"pos": "[-700.9979 4877.2085 16.0312]",
+			"reg": "House 4 Interior",
+			"name": "House 4"
+		},
+		{
+			"ang": "{0 111.4198 0}",
+			"pos": "[-748.2676 4840.4551 16.0312]",
+			"reg": "House 4 Interior",
+			"name": "House 4"
+		},
+		{
+			"ang": "{0 -176.0486 0}",
+			"pos": "[-2669.5383 9642.7666 16.0312]",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret"
+		},
+		{
+			"ang": "{0 161.0823 0}",
+			"pos": "[-2708.0129 9600.127 16.0312]",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret"
+		},
+		{
+			"ang": "{0 139.7533 0}",
+			"pos": "[-2725.6956 9548.4072 16.0312]",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret"
+		},
+		{
+			"ang": "{0 127.9725 0}",
+			"pos": "[-2775.2759 9539.3809 16.0312]",
+			"reg": "House 6 Secret Interior",
+			"name": "House 6 Secret"
+		}
+	]
+}
