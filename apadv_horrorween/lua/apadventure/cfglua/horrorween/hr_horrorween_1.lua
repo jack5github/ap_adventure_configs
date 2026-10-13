@@ -1232,77 +1232,95 @@ local apadvObj = {
 			walkSpeed = 150 + (6.25 * speedAmt)
 			runSpeed = 200 + (25 * speedAmt)
 			HWSetAllPlayersSpeed()
+			if iList[8] ~= nil then return true end
 		end,
 		['House 1 Front Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('intro_frontdoor')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 2 Front Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.GetMapCreatedEntity(HOUSE_2_FRONT_DOOR_ID):Fire('Unlock')
+			return true
 		end,
 		['House 2 Indoor Zombie'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('firstattack_trig')[1]:Fire('Enable')
+			return true
 		end,
 		['House 3 Well Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('stonedoor02')[1]:Fire('Open')
+			return true
 		end,
 		['Church Gate'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('churchdoors_trig')[1]:Fire('Enable')
+			return true
 		end,
 		['Sewer Door to Coin'] = function(iList)
 			if iList[1] == nil then return end
 			ents.GetMapCreatedEntity(SEWER_COIN_DOOR_ID):Fire('Unlock')
+			return true
 		end,
 		['Sewer Door to Key'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('lockeddoor')[1]:Fire('Unlock')
+			return true
 		end,
 		['Sewer Door to Blockage'] = function(iList)
 			if iList[1] == nil then return end
 			ents.GetMapCreatedEntity(SEWER_BLOCKAGE_DOOR_ID):Fire('Unlock')
+			return true
 		end,
 		['Sewer Door to Cell'] = function(iList)
 			if iList[1] == nil then return end
 			local door = ents.FindByName('sewerddd')[1]
 			door:Fire('Unlock')
 			door:Fire('Open')
+			return true
 		end,
 		['Sewer Zombies'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('sewerboss_trigger')[1]:Fire('Enable')
+			return true
 		end,
 		['Bomb'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('bomb_counter')[1]:Fire('Add', '1')
+			return true
 		end,
 		['Detonator'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('bomb_counter')[1]:Fire('Add', '1')
+			return true
 		end,
 		['House 5 Front Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('door03')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 5 Bathroom Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('door06')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 5 Stone Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('stonedoor01')[1]:Fire('Open')
+			return true
 		end,
 		['House 5 Shadow Man'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('scare12_model01')[1]:Fire('Enable')
 			ents.FindByName('scare12_trigger')[1]:Fire('Enable')
+			return true
 		end,
 		['House 5 Door to Unreality'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('door05')[1]:Fire('Unlock')
+			return true
 		end,
 		['Unreality Wrath Door'] = function(iList)
 			if iList[1] == nil then return end
@@ -1311,34 +1329,42 @@ local apadvObj = {
 			end
 			local trigger = ents.FindByName('mansion_ambush_trigger')[1]
 			if trigger ~= nil then trigger:Fire('Enable') end
+			return true
 		end,
 		['Unreality Hallways Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('mansion_hside_door2')[1]:Fire('Unlock')
+			return true
 		end,
 		['Unreality Lust Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('devildoor01')[1]:Fire('Open')
+			return true
 		end,
 		['Unreality Sloth Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('devildoor03')[1]:Fire('Open')
+			return true
 		end,
 		['Unreality Pride Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('devildoor02')[1]:Fire('Open')
+			return true
 		end,
 		['Unreality Blood Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('pride_door')[1]:Fire('Unlock')
+			return true
 		end,
 		['Unreality Exit Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('nightmare_door')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 5 Door Past Unreality'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('mansion_door1')[1]:Fire('Unlock')
+			return true
 		end,
 		['Courtyard Gate'] = function(iList)
 			if iList[1] == nil then return end
@@ -1351,31 +1377,38 @@ local apadvObj = {
 					door:Fire('Open')
 				end
 			end
+			return true
 		end,
 		['House 6 Secret Small Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('midgetdoor')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 6 Front Door'] = function(iList)
 			if iList[1] == nil then return end
 			house6FrontDoor = true
 			ents.GetMapCreatedEntity(HOUSE_6_FRONT_DOOR_TRIGGER_ID):Fire('Enable')
+			return true
 		end,
 		['House 6 Upper Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('door01')[1]:Fire('Open')
+			return true
 		end,
 		['House 6 Cell Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('traphouse_door01')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 8 Front Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('dhouses_door01')[1]:Fire('Unlock')
+			return true
 		end,
 		['House 8 Cutscene'] = function(iList)
 			if iList[1] == nil then return end
 			ents.FindByName('dhouses_fireplace_trigger')[1]:Fire('Enable')
+			return true
 		end,
 		['Golden Coin'] = function(iList)
 			if iList[1] == nil then return end
@@ -1391,10 +1424,12 @@ local apadvObj = {
 			if iList[6] == nil then return end
 			ents.FindByName('rewardblop3')[1]:Fire('Enable')
 			ents.FindByName('reward_boobs_door')[1]:Fire('Unlock')
+			return true
 		end,
 		['Liars Door'] = function(iList)
 			if iList[1] == nil then return end
 			ents.GetMapCreatedEntity(LIARS_DOOR_ID):Fire('Unlock')
+			return true
 		end,
 	}
 }
@@ -1411,6 +1446,7 @@ for _, light in ipairs(unrealityLights) do
 		if light.itemName == 'Unreality Light to Key' then
 			ents.FindByName('scaretriggerrerer')[1]:Fire('Enable')
 		end
+		return true
 	end
 end
 
